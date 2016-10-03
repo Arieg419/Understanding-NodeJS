@@ -1,0 +1,19 @@
+<html ng-app="TestApp">
+	<head>
+		<title>The MEAN stack</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+	</head>
+	<body ng-controller="MainController as vm">
+		<ul>
+			<li ng-repeat="person in vm.people">
+				{{ person.name }}
+			</li>
+		</ul>
+		<script>
+		  // we use <%- for ejs b/c we are trying to output strings not valid html
+			// i think this is a request to the server... check ejs docs.
+			var clientPeople = <%- JSON.stringify(serverPeople) %>;
+		</script>
+		<script src="/assets/js/app.js"></script>
+	</body>
+</html>
